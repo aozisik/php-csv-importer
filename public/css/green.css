@@ -1,0 +1,35 @@
+body
+{
+  background-color:#017644;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+}
+h3 { margin-bottom:8px;color:#80FF80;}
+#container { margin-left:auto;margin-right:auto;width:800px;display:block;}
+
+#csv_files { width:320px;height:25px; margin-top:5px; margin-bottom:5px;color:#333;}
+
+#csv_files option { padding-top:1px; }
+
+#content { margin-left:25px;min-height:150px;height:auto;display:block;}
+
+small { font-size:10px;}
+
+.pad { padding:5px; }
+
+#form1 {min-height:120px; }     
+#form2,#form3 {display:none;}
+
+.error_borders
+{
+	border:3px solid maroon;
+}
+
+input { padding:3px; font-size:16px;width:100px; }
+
+#footer {  margin-left:25px;margin-top:10px;display:block;}
+
+#progressbar { width:300px;height:30px;background-color:#017644;border:3px solid #03985C;margin-bottom:5px;}
+
+#progress { background-color:#80FF80;width:0px;height:25px; background-image:url('progress.png');background-repeat:repeat-x;text-align:center;padding-top:5px;color:#666;overflow:hidden;}
