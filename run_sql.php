@@ -12,7 +12,7 @@ $files = $_SESSION['sql'];
 
 $to_process	 = array_shift($_SESSION['sql']);
 
-mysql_connect($mysql['host'], get_arg('user'), get_arg('pass'));
+mysql_connect(MYSQL_HOST, get_arg('user'), get_arg('pass'));
 mysql_select_db(get_arg('database'));
 
 mysql_set_charset('utf8');
