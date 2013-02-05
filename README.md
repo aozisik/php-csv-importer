@@ -1,4 +1,4 @@
-php-csv-importer
+CSV IMPORT
 ================
 
-Imports CSV file through an ajax interface to a mysql table
+It's a php + ajax script that can import large csv files to a mysql table.
