@@ -125,8 +125,7 @@ $(document).ready(function()
     
     var filename = $('#csv_files').val();
     
-    var build_link = 'prepare_file.php?name=' + filename + '&seperator=' + seperator + '&wrapper=' + wrapper + '&database=' + database + '&user=' + user + '&pass='  + pass + '&table=' + table;  
-    alert(build_link);
+    var build_link = 'prepare_file.php?name=' + filename + '&seperator=' + seperator + '&wrapper=' + wrapper + '&database=' + database + '&user=' + user + '&pass='  + pass + '&table=' + table;
     $.getJSON(build_link, function(JSON)
     {
       line_count = JSON;
