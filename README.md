@@ -1,4 +1,4 @@
-CSV IMPORT
+CSV IMPORT (NOT SUPPORTED!)
 ================
 
 It's a php + ajax script that can import large csv files to a mysql table.
@@ -6,7 +6,6 @@ It's a php + ajax script that can import large csv files to a mysql table.
 
 How Does it Work?
 ================
-
 
 The script lists CSV files in the CSV folder (this can be changed from php/config.php). 
 Once you enter necessary data about the CSV files such as the database connection arguments
