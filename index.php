@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta http-equiv="Content-type"  content="text/html;charset=UTF-8" />
-  <link rel="stylesheet" href="public/css/green.css" media="screen" />
-  <script type="text/javascript" language="javascript" src="public/js/jquery.js"></script>
-  <script type="text/javascript" language="javascript" src="public/js/import.js"></script>
+  <link rel="stylesheet" href="assets/css/green.css" media="screen" />
+  <script type="text/javascript" language="javascript" src="assets/js/jquery.js"></script>
+  <script type="text/javascript" language="javascript" src="assets/js/import.js"></script>
   <title>CSV Import</title>
 </head>
 <body>
@@ -44,7 +44,7 @@
     </div>
     <div id="form2">
       <h3><span id="currently">Preparing the file</span></h3>
-      <img src="public/loading.gif" alt="" id="inprogress" /> <span id="description">CSV file is being read and split into chunks.</span>
+      <img src="assets/loading.gif" alt="" id="inprogress" /> <span id="description">CSV file is being read and split into chunks.</span>
     </div>
     
     <div id="form3">

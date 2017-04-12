@@ -12,28 +12,24 @@ $files = $_SESSION['sql'];
 
 $to_process	 = array_shift($_SESSION['sql']);
 
-mysql_connect(MYSQL_HOST, get_arg('user'), get_arg('pass'));
-mysql_select_db(get_arg('database'));
-
-mysql_set_charset('utf8');
+$dbh = new PDO('mysql:host='.MYSQL_HOST.';dbname='.get_arg('database') .';charset=utf8', get_arg('user'), get_arg('pass'));
 
 $get_sql = file_get_contents($to_process);
 unlink($to_process);
 
 $split   = explode("\n", $get_sql);
 
-foreach($split as $x)
+foreach($split as $sql)
 {
-  if(empty($x)) return;
-    
-  mysql_query($x);
-  $error = mysql_error();
+  if(empty($sql)) {
+	return;
+  }
   
-  if(!empty($error)) file_put_contents('error.txt', $error."\n", FILE_APPEND);
+  $stmt = $dbh->exec($sql);
+  if(!$stmt) {
+  	file_put_contents('error.txt', implode(', ', $dbh->errorInfo())."\n", FILE_APPEND);
+  }
 }
 
 echo '1';
-
-
-mysql_close();
 
