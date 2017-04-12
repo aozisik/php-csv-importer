@@ -19,20 +19,17 @@ $content = file_get_contents($to_process);
 $data    = unserialize($content);
 
 if(!isset($_SESSION['headers_installed'])) {
-	$sql = 'CREATE TABLE IF NOT EXISTS '.get_arg('table').'(`id` int(11) NOT NULL AUTO_INCREMENT, `';
+	$sql = 'CREATE TABLE IF NOT EXISTS '.get_arg('table').'(';
 
 	$table_header_array = $data[0];
 	$data = array_splice($data, 1, count($data)-1);
 
 	$table_columns = array();
-
-	foreach($table_header_array as $column)
-	{
-		$table_columns[] = slug($column);
+	foreach($table_header_array as $column) {
+		$table_columns[] = '`' . slug($column) . '`' . ' varchar(255) NOT NULL';
 	}
 
-	$sql .= join("` varchar(255) NOT NULL, `", $table_columns). '` varchar(255) NOT NULL, PRIMARY KEY (`id`)) ENGINE=MyISAM DEFAULT CHARSET=utf8;'."\n";
-
+	$sql .= implode(',', $table_columns). ') ENGINE=MyISAM DEFAULT CHARSET=utf8;'."\n";
 	$_SESSION['headers_installed'] = true;
 }
 else {
