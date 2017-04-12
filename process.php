@@ -39,7 +39,7 @@ else {
 foreach($data as $val)
 {
 	$val = array_map('mres', $val);
-  $sql .= 'INSERT INTO '.get_arg('table').' VALUES(null, '.join(", ", $val).");\n";
+  	$sql .= 'INSERT INTO '.get_arg('table').' VALUES('.join(", ", $val).");\n";
 }
   
 $sql_file = 'sql/'. (1000-count($_SESSION['files'])) .'.sql';

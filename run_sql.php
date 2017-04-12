@@ -1,6 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 'on');
 
 header('Content-type: text/html;charset=utf8');
 session_start();
@@ -8,9 +6,7 @@ include('php/config.php');
 include('php/functions.php');
 
 $files = $_SESSION['sql'];
-
-
-$to_process	 = array_shift($_SESSION['sql']);
+$to_process	= array_shift($_SESSION['sql']);
 
 $dbh = new PDO('mysql:host='.MYSQL_HOST.';dbname='.get_arg('database') .';charset=utf8', get_arg('user'), get_arg('pass'));
 
@@ -27,9 +23,9 @@ foreach($split as $sql)
   
   $stmt = $dbh->exec($sql);
   if(!$stmt) {
-  	file_put_contents('error.txt', implode(', ', $dbh->errorInfo())."\n", FILE_APPEND);
+  	file_put_contents('error.txt', $sql . "\n" . implode(', ', $dbh->errorInfo())."\n", FILE_APPEND);
   }
 }
 
-echo '1';
+echo count($split);
 
